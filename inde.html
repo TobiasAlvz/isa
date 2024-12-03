@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio Divertido</title>
+        <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #444;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            background-color: #6c63ff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background-color: #5752d1;
+        }
+        button:active {
+            transform: scale(0.9);
+        }
+    </style>
+    </head>
+    <body>
+        <h1 id="title">Isa é uma pessoa linda e incrível?</h1>
+        <div class="button-container">
+            <button id="sim" onclick="acertou()">Sim</button>
+            <button id="nao" onclick="moverBotao()">Não</button>
+        </div>
+
+        <script>
+        function acertou() {
+            const titulo = document.getElementById('title');
+            titulo.textContent = "Parabéns meu bemgfd kkkkkkkkk";
+        }
+
+        function moverBotao() {
+            const botaoNao = document.getElementById('nao');
+            const maxWidth = window.innerWidth - botaoNao.offsetWidth;
+            const maxHeight = window.innerHeight - botaoNao.offsetHeight;
+
+            const novaPosicaoX = Math.random() * maxWidth;
+            const novaPosicaoY = Math.random() * maxHeight;
+
+            botaoNao.style.position = 'absolute';
+            botaoNao.style.left = `${novaPosicaoX}px`;
+            botaoNao.style.top = `${novaPosicaoY}px`;
+        }
+    </script>
+    </body>
+</html>
